@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class ClassificacaoCriminosa {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        int contadorPositivas = 0;
+
+        
+        System.out.print("Telefonou para a vítima? (s/n): ");
+        String resposta = scanner.nextLine().toLowerCase(); // Converte para minúsculas
+        if (resposta.equals("s")) {
+            contadorPositivas++;
+        }
+
+        System.out.print("Esteve no local do crime? (s/n): ");
+        resposta = scanner.nextLine().toLowerCase(); // Converte para minúsculas
+        if (resposta.equals("s")) {
+            contadorPositivas++;
+        }
+
+        System.out.print("Devia para a vítima? (s/n): ");
+        resposta = scanner.nextLine().toLowerCase(); // Converte para minúsculas
+        if (resposta.equals("s")) {
+            contadorPositivas++;
+        }
+
+        System.out.print("Já trabalhou com a vítima? (s/n): ");
+        resposta = scanner.nextLine().toLowerCase(); // Converte para minúsculas
+        if (resposta.equals("s")) {
+            contadorPositivas++;
+        }
+
+        System.out.print("Mora perto da vítima? (s/n): ");
+        resposta = scanner.nextLine().toLowerCase(); // Converte para minúsculas
+        if (resposta.equals("s")) {
+            contadorPositivas++;
+        }
+
+        
+        if (contadorPositivas == 2) {
+            System.out.println("Suspeita");
+        } else if (contadorPositivas >= 3 && contadorPositivas <= 4) {
+            System.out.println("Cúmplice");
+        } else if (contadorPositivas == 5) {
+            System.out.println("Assassino");
+        } else {
+            System.out.println("Inocente");
+        }
+
+        scanner.close();
+    }
+}
